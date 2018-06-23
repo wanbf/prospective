@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.wanbf.com/schema/wanbf"
+        xmlns:tns="http://www.wanbf.com/schema/wanbf"
+        elementFormDefault="qualified">
+
+    <element name="publish">
+        <complexType>
+            <attribute name="id" type="string" default="" />
+            <attribute name="contact" type="string" default="" />
+            <attribute name="serviceName" type="string" default="" />
+            <attribute name="serviceImplName" type="string" default="" />
+        </complexType>
+    </element>
+
+</schema>
