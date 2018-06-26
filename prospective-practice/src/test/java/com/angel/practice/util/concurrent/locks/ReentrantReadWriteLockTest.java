@@ -14,24 +14,18 @@ public class ReentrantReadWriteLockTest {
     public void test() {
         final Queue q3 = new Queue();
         for (int i = 0; i < 3; i++) {
-            new Thread() {
-                public void run() {
-                    while (true) {
-                        q3.get();
-                    }
+            new Thread(() -> {
+                while (true) {
+                    q3.get();
                 }
-
-            }.start();
+            }).start();
         }
         for (int i = 0; i < 3; i++) {
-            new Thread() {
-                public void run() {
-                    while (true) {
-                        q3.put(new Random().nextInt(10000));
-                    }
+            new Thread(() -> {
+                while (true) {
+                    q3.put(new Random().nextInt(10000));
                 }
-
-            }.start();
+            }).start();
         }
     }
 
@@ -43,7 +37,7 @@ public class ReentrantReadWriteLockTest {
             rwl.readLock().lock();//上读锁，其他线程只能读不能写
             System.out.println(Thread.currentThread().getName() + " be ready to read data!");
             try {
-                Thread.sleep((long) (Math.random() * 1000));
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -55,7 +49,7 @@ public class ReentrantReadWriteLockTest {
             rwl.writeLock().lock();//上写锁，不允许其他线程读也不允许写
             System.out.println(Thread.currentThread().getName() + " be ready to write data!");
             try {
-                Thread.sleep((long) (Math.random() * 1000));
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

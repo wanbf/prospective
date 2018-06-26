@@ -24,7 +24,7 @@ public final  class Scanner extends ClassPathBeanDefinitionScanner {
         for (BeanDefinitionHolder holder : beanDefinitions) {
             GenericBeanDefinition definition = (GenericBeanDefinition) holder.getBeanDefinition();
             definition.getPropertyValues().add("innerClassName", definition.getBeanClassName());
-            definition.setBeanClass(FactoryBeanTest.class);
+            definition.setBeanClass(BeanDefinitionRegistry.class);
         }
         return beanDefinitions;
     }

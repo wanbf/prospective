@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by wanbf on 2017/12/11.
  */
 public class ClassPoolTest {
-    File file = new File("c:/Main.class");
+    File file = new File("c:/ThreadInfo.class");
 
     @Test
     public void test() throws IOException {
@@ -22,7 +22,7 @@ public class ClassPoolTest {
             file.delete();
         file.createNewFile();
         ClassPool pool = ClassPool.getDefault();
-        CtClass ctClass = pool.makeClass("com.wanbf.Main");
+        CtClass ctClass = pool.makeClass("com.wanbf.ThreadInfo");
         ctClass.stopPruning(true);
         try {
             //添加属性
@@ -40,7 +40,7 @@ public class ClassPoolTest {
             if (ctClass.isFrozen()) {
                 ctClass.defrost();
             }
-            ctClass = pool.get("com.wanbf.Main");
+            ctClass = pool.get("com.wanbf.ThreadInfo");
             ctClass.addField(CtField.make("private String sex;", ctClass));
             ctClass.addField(CtField.make("private String name;", ctClass));
 
