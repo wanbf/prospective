@@ -1,7 +1,7 @@
 package com.angel.prospective.util.jackson;
 
 /**
- * Created by wanbf on 2018/6/26.
+ * Created by wanbf on 2018/6/27.
  */
 public class User {
     private String name;

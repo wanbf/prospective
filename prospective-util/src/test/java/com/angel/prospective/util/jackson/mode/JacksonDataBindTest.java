@@ -59,7 +59,7 @@ public class JacksonDataBindTest {
         nonEmptyMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
     }
 
-    @Test
+  //  @Test
     public void testReadValue() throws IOException {
         String json = "{\n" +
                 "  \"name\" : \"发如雪\",\n" +
@@ -70,7 +70,7 @@ public class JacksonDataBindTest {
         System.out.println(testBean.toString());
     }
 
-    @Test
+  //  @Test
     public void testWriteValue() throws IOException {
         TestBean testBean = new TestBean("发如雪", Sexy.MEN);
         System.out.println(prettyMapper1.writeValueAsString(testBean));
