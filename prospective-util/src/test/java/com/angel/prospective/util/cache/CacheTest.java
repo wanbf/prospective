@@ -1,9 +1,5 @@
-package com.angel.prospective.util;
+package com.angel.prospective.util.cache;
 
-import com.angel.prospective.util.cache.FIFOCache;
-import com.angel.prospective.util.cache.LFUCache;
-import com.angel.prospective.util.cache.LRUCache;
-import com.angel.prospective.util.cache.TimedCache;
 import com.angel.prospective.util.date.DateUnit;
 import org.junit.Test;
 

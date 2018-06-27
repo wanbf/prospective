@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>prospective-dubbo-test</artifactId>
+    <artifactId>prospective-dubbo</artifactId>
 
     <dependencies>
         <dependency>
