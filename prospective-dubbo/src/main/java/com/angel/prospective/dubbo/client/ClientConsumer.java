@@ -16,7 +16,7 @@ public class ClientConsumer {
 
 // 连接注册中心配置
         RegistryConfig registry = new RegistryConfig();
-        registry.setAddress("zookeeper://10.32.21.6:2181");
+        registry.setAddress("zookeeper://10.200.4.74:2181");
         registry.setUsername("root");
         registry.setPassword("root");
 

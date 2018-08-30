@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--
+
+
+    -->
+    <context:component-scan base-package="com.prospective.web"/>
+
+    <!--spring 配置aspectj StudentAspect.class-->
+    <aop:aspectj-autoproxy/>
+
+    <!--配置文件配置切面 -->
+    <bean id="service" class="com.prospective.web.service.StudentServiceImpl"/>
+    <bean id="aspect" class="com.prospective.web.aspect.StudentAspect"/>
+
+    <!--配置aop -->
+    <aop:config>
+        <aop:pointcut id="pointCut" expression="execution(* com.prospective.web.service.StudentServiceImpl.add())"/>
+        <aop:aspect ref="aspect" order="1" >
+            <aop:before method="before" pointcut-ref="pointCut"/>
+        </aop:aspect>
+    </aop:config>
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${db.driverClassName}" />
+        <property name="url" value="${db.url}" />
+        <property name="username" value="${db.user}" />
+        <property name="password" value="${db.pass}" />
+    </bean>
+
+
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- spring 静态共产方法配置bean-->
+    <bean id="stu" class="com.prospective.web.factory.StaticFactory" factory-method="getStudent"/>
+    <!-- spring 实例工厂的方法配置bean-->
+    <bean id="factory" class="com.prospective.web.factory.InstanceFactory"/>
+    <bean id="stu1" factory-bean="factory" factory-method="getStudent"/>
+
+    <!-- spring factoryBean 配置bean-->
+    <bean id="stu2" class="com.prospective.web.factory.FactoryBean"/>
+</beans>
