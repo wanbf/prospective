@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!-- spring 的继承关系-->
+    <bean id="home" class="com.prospective.web.entity.Home"/>
+    <bean id="st4" class="com.prospective.web.entity.Student"
+          p:age="12">
+
+    </bean>
+    <bean id="st3" parent="st4">
+    </bean>
+    <!-- spring 的依赖关系-->
+    <bean id="home1" class="com.prospective.web.entity.Home"/>
+    <bean id="st6" class="com.prospective.web.entity.Student"
+          p:age="12" p:home-ref="home">
+
+    </bean>
+    <bean id="st5" parent="st6" depends-on="">
+    </bean>
+</beans>

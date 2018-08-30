@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- spring spel-->
+    <bean id="st21" class="com.prospective.web.entity.Student">
+        <constructor-arg name="age" value="15"/>
+    </bean>
+    <bean id="st2" class="com.prospective.web.entity.Student">
+        <constructor-arg name="age" value="#{'12'}"/>
+    </bean>
+    <bean id="st3" class="com.prospective.web.entity.Student">
+        <constructor-arg name="age" value="#{st21.age}"/>
+    </bean>
+</beans>
