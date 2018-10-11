@@ -19,6 +19,7 @@
         <module>prospective-spring-boot</module>
         <module>prospective-web</module>
         <module>prospective-hadoop</module>
+        <module>prospective-design_pattern</module>
     </modules>
 
     <properties>
