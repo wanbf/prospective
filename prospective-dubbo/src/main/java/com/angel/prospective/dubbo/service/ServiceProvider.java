@@ -22,9 +22,7 @@ public class ServiceProvider {
 
           // 连接注册中心配置
           RegistryConfig registry = new RegistryConfig();
-          registry.setAddress("zookeeper://10.200.4.74:2181");
-/*          registry.setUsername("root");
-          registry.setPassword("root");*/
+          registry.setAddress("zookeeper://127.0.0.1:2181");
 
           // 服务提供者协议配置
           ProtocolConfig protocol = new ProtocolConfig();

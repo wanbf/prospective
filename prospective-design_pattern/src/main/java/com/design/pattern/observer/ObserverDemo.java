@@ -8,8 +8,8 @@ class Watcher implements Observer {
     public void update(Observable o, Object arg) {
         System.out.println("Update() called, count is "
                 + ((Integer) arg).intValue());
-    }
-}
+        }
+        }
 
 class BeingWatched extends Observable {
     void counter(int period) {
