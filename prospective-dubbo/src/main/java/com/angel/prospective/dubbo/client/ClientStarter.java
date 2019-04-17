@@ -11,11 +11,9 @@ public class ClientStarter {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationContext-client.xml" });
         context.start();
-        Provider demoService = (Provider) context.getBean("demoService1"); // 获取bean
-        String message ;
+        VmService vmService = (VmService) context.getBean("vmService"); // 获取bean
         try {
-            message = demoService.build("2016-10-20");
-            System.out.println(" the message from server is:" + message);
+            System.out.println(vmService.getVmInfoByEnv(EnvTag.TEST_ENV));
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

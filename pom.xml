@@ -29,6 +29,7 @@
         <module>prospective-netty</module>
         <module>prespective-serialization</module>
         <module>prospective-sharding</module>
+        <module>prospective-spring-annotation</module>
     </modules>
 
     <properties>

@@ -9,6 +9,7 @@ public final class ProtoBufferPractice {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
+
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(

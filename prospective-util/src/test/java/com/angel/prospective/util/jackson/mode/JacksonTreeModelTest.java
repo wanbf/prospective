@@ -45,7 +45,7 @@ public class JacksonTreeModelTest {
 
     }
 
-   // @Test
+   // @Test1
     public void testTreeModel() throws Exception {
         JsonNodeFactory nodeFactory = objectMapper.getNodeFactory();
         // 创建一个model

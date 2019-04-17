@@ -8,6 +8,11 @@ public class StackErrorMock {
 
     public void call(){
         index++;
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         call();
     }
 

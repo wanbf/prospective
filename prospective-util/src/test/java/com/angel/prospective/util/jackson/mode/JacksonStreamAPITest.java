@@ -34,7 +34,7 @@ public class JacksonStreamAPITest {
         jsonGenerator.disable(JsonGenerator.Feature.WRITE_NUMBERS_AS_STRINGS);
     }
 
-  //  @Test
+  //  @Test1
     public void testGenerator() throws Exception {
         String str = "hello,world!jackson!";
         // 输出字节
@@ -60,7 +60,7 @@ public class JacksonStreamAPITest {
         jsonGenerator.writeEndObject();
     }
 
-   //@Test
+   //@Test1
     public void testParser() throws Exception {
         String testStr = "{\"message\":\"Hello World!\",\"names\":[\"周杰伦\",\"王力宏\"]}";
         JsonParser p = factory.createParser(testStr);

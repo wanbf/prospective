@@ -8,11 +8,18 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
 
-    <dubbo:application name="prospective-c"/>
+<!--    <dubbo:application name="prospective-c"/>
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:consumer timeout="5000"/>
 
     <dubbo:reference id="demoService1"
-                     interface="com.angel.prospective.dubbo.service.Provider"/>
+                     interface="com.angel.prospective.dubbo.service.Provider"/>-->
+    <dubbo:application name="prospective-c"/>
+
+    <dubbo:registry address="zookeeper://10.200.4.74:2181"/>
+    <dubbo:consumer timeout="5000"/>
+
+    <dubbo:reference id="vmService"
+                     interface="com.angel.prospective.dubbo.client.VmService"/>
 </beans>
