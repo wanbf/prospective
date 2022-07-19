@@ -1,12 +1,8 @@
 package com.prospective.practice;
 
-import com.google.common.collect.Maps;
-
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * @author wanbf
@@ -24,7 +20,7 @@ public class BigIntegerTest {
         if (now.after(beginDate) && now.before(endDate)) {
             System.out.println("now time is between  beginDate and enDate");
         } else {
-            System.out.println("now time is not between beginDate and enDate");
+            System.out.println("now time is not between beginDate and enDate.");
         }
 
     }
