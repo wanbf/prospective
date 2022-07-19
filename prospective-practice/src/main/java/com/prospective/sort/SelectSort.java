@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class SelectSort {
 
-    public static void bubbleSort(int[] arr) {
+    public static void selectSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             //记录最小的值
             int min = arr[i];
@@ -36,7 +36,7 @@ public class SelectSort {
 
     public static void main(String[] args) {
         int[] a = new int[]{2, 3, 5, 7, 1, 21, 23, 90, 231, 324, 32, 12};
-        bubbleSort(a);
+        selectSort(a);
         System.out.print(Arrays.toString(a));
     }
 }

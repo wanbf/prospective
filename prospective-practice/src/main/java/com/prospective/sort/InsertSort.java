@@ -13,7 +13,7 @@ import java.util.Arrays;
  * @version $Id: InsertSort.java, v 0.1 2022年07月19日 7:34 PM wanbingfa Exp $
  */
 public class InsertSort {
-    public static void bubbleSort(int[] arr) {
+    public static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             //定义待插入的数
             int insertVal = arr[i];
@@ -40,7 +40,7 @@ public class InsertSort {
 
     public static void main(String[] args) {
         int[] a = new int[]{2, 3, 5, 7, 1, 21, 23, 90, 231, 324, 32, 12};
-        bubbleSort(a);
+        insertSort(a);
         System.out.print(Arrays.toString(a));
     }
 }
