@@ -40,8 +40,12 @@ public class QuickSort {
         int right = rightBound - 1;
 
         while (left <= right) {
-            while(left <= right && arr[left] <= pivot) left++;
-            while(left <= right && arr[right] > pivot) right--;
+            while (left <= right && arr[left] <= pivot) {
+                left++;
+            }
+            while (left <= right && arr[right] > pivot) {
+                right--;
+            }
 
             if (left < right) {
                 //如果 左边的数比右边的数小  两个数交换
