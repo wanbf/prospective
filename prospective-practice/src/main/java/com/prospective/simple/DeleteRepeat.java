@@ -26,8 +26,11 @@ public class DeleteRepeat {
 
     public static void main(String[] args) {
         int[] a = new int[]{2, 2, 2, 3, 5, 5, 7, 8, 12, 13, 13, 14, 14};
+        int[] a1 = new int[]{2, 2, 2, 3, 5, 5, 7, 8, 12, 13, 13, 14, 14};
         System.out.println(removeDuplicates(a));
         System.out.println(Arrays.toString(a));
+        System.out.println(removeVal(a1,14));
+        System.out.println(Arrays.toString(a1));
     }
 
     public static int removeDuplicates(int[] nums) {
@@ -44,7 +47,28 @@ public class DeleteRepeat {
             fast++;
 
         }
+        removeUnusedVal(nums,slow);
         return slow;
+    }
+
+    public static int removeVal(int[] nums,int val){
+        int fast = 0;
+        int slow = 0;
+        while(fast<nums.length){
+            if(nums[fast]!=val){
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        removeUnusedVal(nums,slow);
+        return slow;
+    }
+
+    public static void removeUnusedVal(int[]arr,int size){
+        for(int i = size;i<arr.length;i++){
+            arr[i] =0;
+        }
     }
 
 }
