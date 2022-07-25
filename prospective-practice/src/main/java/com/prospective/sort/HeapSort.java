@@ -17,59 +17,57 @@ public class HeapSort {
         System.out.println(Arrays.toString(array));
     }
 
-
-
-    public static void heapSort(int arr[]) {
-        int temp = 0;
-
+    /**
+     * 堆排序
+     */
+    public static void heapSort(int[] arr) {
+        //为什么从arr.length/2-1开始？
         for (int i = arr.length / 2 - 1; i >= 0; i--) {
             adjustHeap(arr, i, arr.length);
         }
-        /**
-         * 将堆项元素与末尾元素交换，将最大元素"沉"到数组末端;
-         * 重新调整结构，使其满足堆定义，然后继续交换堆项元素与当前末尾元素，反复执行调整+交换步骤，直到整个序列有序。
-         */
 
         for (int j = arr.length - 1; j > 0; j--) {
-            temp = arr[j];
+            int temp = arr[j];
             arr[j] = arr[0];
             arr[0] = temp;
+            /*为什么从0开始？
+                因为在第一次构建大顶堆后让堆顶元素和末尾元素进行交换
+                而对于其他的非叶子结点所对应的子树都是大顶堆就无需调整，
+                只需要堆顶元素(下标为0的非叶子结点)的子树调整成大顶堆
+            */
             adjustHeap(arr, 0, j);
 
         }
-
-
     }
 
-
     /**
-     * 将一个数组（二叉树）调整成一个大根堆
-     * 功能：完成将以i对应的非叶子结点的树调整成大顶堆
-     * 举例int arr[]={4, 6,8,5,9};=>i=1=> adjustHeap=>得到{4,9,8,5, 6}
-     * 如果我们再次调用adjustHeap 传入的是i=0=>得到{4,9, 8,5,6}=> {9,6,8,5, 4}
+     * 构建大顶堆
+     * 注意：
+     * 这个方法并不是将整个树调整成大顶堆
+     * 而是以i对应的非叶子结点的子树调整成大顶堆
      *
      * @param arr    待调整的数组
-     * @param i      表示非叶子结点在数组中索引
-     * @param length 表示对多少个元素继续调整，length 是在逐渐的减少
+     * @param i      非叶子结点在数组中的索引(下标)
+     * @param length 进行调整的元素的个数，length是在逐渐减少的
      */
-    public static void adjustHeap(int arr[], int i, int length) {
+    public static void adjustHeap(int[] arr, int i, int length) {
+        /*取出当前非叶子结点的值保到临时变量中*/
+        int temp = arr[i];
 
-        int temp = arr[i];//先取出当前元素的值，保存在临时变量
-        //开始调整.
-        //说明:k=i*2+1k是i结点的左子结点
-        for (int k = i * 2 + 1; k < length; k = k * 2 + 1) {
-            if (k + 1 < length && arr[k] < arr[k + 1]) {
-                k++;
+        /*j=i*2+1表示的是i结点的左子结点*/
+        for (int j = i * 2 + 1; j < length; j = j * 2 + 1) {
+            if (j + 1 < length && arr[j] < arr[j + 1]) { //左子结点小于右子结点
+                j++; //j指向右子结点
             }
-            if (arr[k] > arr[i]) {
-                arr[i] = arr[k];
-                i = k;
+            if (arr[j] > temp) { //子节点大于父节点
+                arr[i] = arr[j]; //把较大的值赋值给父节点
+                //arr[j] = temp; 这里没必要换
+                i = j; //让i指向与其换位的子结点 因为
             } else {
+                /*子树已经是大顶堆了*/
                 break;
             }
         }
         arr[i] = temp;
-
     }
-
 }
